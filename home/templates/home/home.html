@@ -1,0 +1,20 @@
+{% include 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <h1>Welcome, {{ user.username }}!</h1>
+        <p>Click below to logo out.</p>
+        <form action="{% url "logout" %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Log out">
+        </form>
+
+    {% else %}
+        <h1>Welcome to the home page!</h1>
+        <p>This is the home page of the Django app.</p>
+        <p>Click <a href="{% url 'login' %}">here</a> to log in.</p>
+        <p>Click <a href="{% url 'register' %}">here</a> to register.</p>
+    {% endif %}
+{% endblock %}
