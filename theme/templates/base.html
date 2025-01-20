@@ -1,21 +1,38 @@
 {% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-    <title>{% block title %} {% endblock %}</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		{% tailwind_css %}
-	</head>
 
-	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
-		<div class="container mx-auto">
-			<section class="flex items-center justify-center h-screen">
-				<h1 class="text-5xl">Django + Tailwind = ❤️</h1>
-                {% block content %}
-                {% endblock %}
-			</section>
-		</div>
-	</body>
+<head>
+    <title>{% block title %} {% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% tailwind_css %}
+</head>
+
+<body class="bg-gray-50 font-serif leading-normal tracking-normal">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-white text-xl font-bold">
+                <a href="#" class="hover:underline">Brand Name</a>
+            </div>
+            <div class="space-x-4">
+                <a href="#" class="text-white hover:underline">Home</a>
+                <a href="#" class="text-white hover:underline">About</a>
+                <a href="#" class="text-white hover:underline">Services</a>
+                <a href="#" class="text-white hover:underline">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container mx-auto p-6">
+        <section>
+            {% block content %}
+            {% endblock %}
+        </section>
+    </div>
+</body>
+
 </html>
