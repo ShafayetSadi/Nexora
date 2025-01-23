@@ -1,0 +1,25 @@
+<div class="drawer fixed z-[9999]">
+    <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+
+    <div class="drawer-side">
+      <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+      <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4 fixed top-20 ">
+        <!-- Sidebar content here -->
+        <li><a>Sidebar Item 1</a></li>
+        <li><a>Sidebar Item 2</a></li>
+      </ul>
+    </div>
+  </div>
+  <style>
+  .drawer-side {
+  
+  }
+
+  /* When checkbox is checked, slide the drawer into view */
+  .drawer-toggle:checked + .drawer-content + .drawer-side {
+    transform: translateX(0); /* Slide drawer into view */
+  }
+
+  /* Hide overlay (clear background) */
+
+  </style>

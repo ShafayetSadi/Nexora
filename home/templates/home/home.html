@@ -1,20 +1,8 @@
-{% include 'base.html' %}
-
-{% block title %}Home{% endblock %}
-
-{% block content %}
-    {% if user.is_authenticated %}
-        <h1>Welcome, {{ user.username }}!</h1>
-        <p>Click below to logo out.</p>
-        <form action="{% url "logout" %}" method="post">
-            {% csrf_token %}
-            <input type="submit" value="Log out">
-        </form>
-
-    {% else %}
-        <h1>Welcome to the home page!</h1>
-        <p>This is the home page of the Django app.</p>
-        <p>Click <a href="{% url 'login' %}">here</a> to log in.</p>
-        <p>Click <a href="{% url 'register' %}">here</a> to register.</p>
-    {% endif %}
-{% endblock %}
+{%extends 'base.html'%}
+{%block title%}Home{%endblock%}
+{%block content%}
+<div class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold text-center">Welcome to Nexora</h1>
+    <p class="text-center text-lg mt-4">The best place to learn and share your knowledge with others</p>
+</div>
+{%endblock%}
