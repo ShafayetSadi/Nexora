@@ -6,4 +6,5 @@ urlpatterns = [
     path('', include("home.urls")),
     path('user/', include("users.urls")),
     path("__reload__/", include("django_browser_reload.urls")),
+    path("classroom/",include("classroom.urls"))
 ]

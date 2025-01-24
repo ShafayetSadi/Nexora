@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'django_browser_reload',
     # Nexora apps
     'users.apps.UsersConfig',
-    'home.apps.HomeConfig'
+    'home.apps.HomeConfig',
+    'classroom.apps.ClassroomConfig'
 ]
 
 MIDDLEWARE = [
@@ -128,7 +129,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+
 STATIC_URL = 'static/'
+
+# If your static folder is inside the project folder (not inside an app):
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

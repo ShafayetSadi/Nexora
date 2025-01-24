@@ -1,0 +1,45 @@
+
+  .drawer-side {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* When checkbox is checked, slide the drawer into view */
+  .drawer-toggle:checked + .drawer-content + .drawer-side {
+    transform: translateX(0); /* Slide drawer into view */
+  }
+
+  /* Styling for sidebar items */
+  .menu li a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 18px;
+    color: #333;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+  }
+
+  .menu li a:hover {
+    background-color: #ddd;
+  }
+
+  /* Adding space between icon and text */
+  .menu li a i {
+    margin-right: 10px;
+  }
+
+  /* Style for nested lists */
+  .menu li ul {
+    display: none;
+  }
+
+  .menu li:hover ul {
+    display: block;
+  }
+
+  .menu li ul li a {
+    font-size: 16px;
+    padding-left: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }

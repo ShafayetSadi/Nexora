@@ -12,46 +12,25 @@
       rel="stylesheet"
       type="text/css"
     />
+    
+  
+    <link rel="stylesheet" href="{% static 'css/dist/sidebar.css' %}">
+
     <script src="https://cdn.tailwindcss.com"></script>
     {% tailwind_css %}
   </head>
 
   <body class="bg-gray-50 font-serif leading-normal tracking-normal">
     <!-- Navbar -->
-    <nav class="bg-blue-600 p-4">
-      <div class="container mx-auto flex justify-between items-center">
-        <div class="text-white text-xl font-bold">
-          <div class="drawer-content">
-            <!-- Page content here -->
-            <label for="my-drawer-4" class="drawer-button btn btn-primary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-menu"
-              >
-                <path d="M3 12h18M3 6h18M3 18h18"></path>
-              </svg>
-            </label>
-          </div>
-        </div>
-        <div class="space-x-4">
-          <a href="#" class="text-white hover:underline">Home</a>
-          <a href="#" class="text-white hover:underline">About</a>
-          <a href="#" class="text-white hover:underline">Services</a>
-          <a href="#" class="text-white hover:underline">Contact</a>
-        </div>
-      </div>
-    </nav>
+   {% include 'header.html' %}
 
     <!-- Main content -->
+    {% include 'sidebar.html' %}
+    {% if request.path|slice:":10" == '/classroom' %}
+      {% include 'classroom/classroomnav.html' %}
+    {% endif %}
     <div class="container mx-auto p-6 flex">
-      {% include 'sidebar.html' %}
+    
 
       <section>{% block content %} {% endblock %}</section>
     </div>

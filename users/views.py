@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .forms import UserRegistrationForm
 
 
-def register(request):
+def register_done(request):
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
         if user_form.is_valid():
@@ -20,3 +20,10 @@ def register(request):
 def profile(request):
     user = request.user
     return render(request, 'users/profile.html', {'user': user})
+
+def register(request):
+    return render(request,'users/register.html')
+
+
+def login(request):
+    return render(request,'registration/login.html')
