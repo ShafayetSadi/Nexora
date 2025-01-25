@@ -48,8 +48,14 @@ INSTALLED_APPS = [
     # Nexora apps
     'users.apps.UsersConfig',
     'home.apps.HomeConfig',
-    'classroom.apps.ClassroomConfig'
+    'classroom.apps.ClassroomConfig',
+    # Third-party apps
+    'crispy_forms',
+    "crispy_tailwind",
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
+CRISPY_TEMPLATE_PACK = "tailwind"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
