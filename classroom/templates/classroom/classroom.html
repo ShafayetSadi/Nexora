@@ -1,4 +1,49 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
+<div class="w-screen sm:w-[300px] md:w-[400px] lg:w-[500px] xl:w-[1000px] ">
+  <div
+    class="h-[250px] bg-gradient-to-r from-blue-500 to-purple-500 text-white mx-auto m-4 rounded-lg relative"
+  >
+    <div class="flex flex-col justify-between items-start min-h-full">
+      <!-- Flex container to take full height -->
+      <div class="absolute bottom-4 left-4">
+        <p class="text-lg">Subject Name</p>
+        <!-- Example subject text -->
+      </div>
+    </div>
+  </div>
+  <div class="mx-auto bg-white shadow-lg rounded-lg overflow-hidden m-4">
+    <!-- Post Header -->
+    <div class="flex items-center p-4">
+      <img
+        src="https://randomuser.me/api/portraits/men/10.jpg"
+        alt="User"
+        class="w-12 h-12 rounded-full object-cover"
+      />
+      <div class="ml-4">
+        <p class="font-semibold text-gray-800">John Doe</p>
+        <p class="text-sm text-gray-500">2 hours ago</p>
+      </div>
+    </div>
 
-{%endblock%}
+    <!-- Post Content -->
+    <div class="p-4">
+      <p class="text-gray-800">
+        This is a sample post content that you might share with your friends.
+        #life #travel
+      </p>
+    </div>
+
+    <!-- Post Image -->
+
+    <!-- Post Footer (Reactions) -->
+    <div class="flex justify-between items-center p-4">
+      <div class="flex space-x-4">
+        <button class="text-blue-500 hover:text-blue-700">Like</button>
+        <button class="text-blue-500 hover:text-blue-700">Comment</button>
+        <button class="text-blue-500 hover:text-blue-700">Share</button>
+      </div>
+      <button class="text-gray-500 hover:text-gray-700">3 Comments</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
