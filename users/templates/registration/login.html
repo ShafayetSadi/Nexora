@@ -29,8 +29,8 @@
                         {% csrf_token %}
                         
                         <div>
-                            <label for="id_login" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ form.login.label }}</label>
-                            <input type="text" id="id_login" name="login" class="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter username" value="{{ form.login.value }}" required>
+                            <label for="id_username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ form.username.label }}</label>
+                            <input type="text" id="id_username" name="username" class="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter username" required>
                         </div>
                         
                         <div>
