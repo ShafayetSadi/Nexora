@@ -1,11 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 
 from .forms import ClassroomForm
-
-
-def classroom(request):
-    return render(request, 'classroom/classroom.html')
+from .models import Classroom
 
 
 def create_classroom(request):
@@ -17,3 +14,10 @@ def create_classroom(request):
     else:
         form = ClassroomForm()
     return render(request, 'classroom/create_classroom.html', {'form': form})
+
+
+def classroom_detail(request, slug):
+    classroom = get_object_or_404(Classroom, slug=slug)
+    return render(request, 'classroom/classroom_detail.html', {
+        'classroom': classroom
+    })

@@ -1,13 +1,25 @@
-{%extends 'base.html'%} {%block title%}Home{%endblock%} {%block content%}
-<div class="container mx-auto p-2">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-      {% include 'home/card.html' %}
-      {% include 'home/card.html' %}
-      {% include 'home/card.html' %}
-      {% include 'home/card.html' %}
-      {% include 'home/card.html' %}
-      {% include 'home/card.html' %}
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <div class="container mx-auto p-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+            {% for classroom in classrooms %}
+                <div class="card bg-base-100 shadow-xl">
+                    <figure>
+                        <img src="{{ classroom.course_image.url }}" alt="{{ classroom.title }}"
+                             class="w-full h-48 object-cover"/>
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">{{ classroom.title }}</h2>
+                        <p>{{ classroom.short_introduction }}</p>
+                        <div class="card-actions justify-end">
+                            <a href="{% url 'classroom_detail' classroom.slug %}">
+                                <button class="btn btn-primary">Learn More</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
-  </div>
-  
-{%endblock%}
+{% endblock %}

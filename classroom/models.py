@@ -15,5 +15,14 @@ class Classroom(models.Model):
     paid_course = models.BooleanField(default=False)
     course_price = models.DecimalField(max_digits=10, decimal_places=2)
 
+    slug = models.SlugField(max_length=255, unique=True)
+    total_rating = models.DecimalField(max_digits=5, decimal_places=2, default=0.0)
+    number_of_ratings = models.IntegerField(default=0)
+
     def __str__(self):
         return self.title
+
+    def average_rating(self):
+        if self.number_of_ratings == 0:
+            return 0
+        return self.total_rating / self.number_of_ratings
